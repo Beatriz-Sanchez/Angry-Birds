@@ -114,15 +114,6 @@ function draw(){
         fill("white");
         text("Tente novamente...",450,200);
     }
-
-    if (touches.length>0 && estado === "lançado") {
-        estilingue.ligar();
-        Body.setPosition(bird.body, {x: 200, y: 50});
-        Body.setAngle(bird.body,0);
-        estado = "no estilingue";
-        bird.trajetoria = [];  
-        touches = [];
-    }
 }
 
 function mouseDragged(){
@@ -137,6 +128,16 @@ function mouseReleased(){
         estilingue.voar();
         estado = "lançado";
         chances--;
+    }
+}
+
+function mousePressed(){
+    if(estado === "lançado" && chances > 0) {
+        estilingue.ligar();
+        Body.setPosition(bird.body, {x: 200, y: 50});
+        Body.setAngle(bird.body,0);
+        estado = "no estilingue";
+        bird.trajetoria = []; 
     }
 }
 
