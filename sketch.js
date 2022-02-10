@@ -114,6 +114,10 @@ function draw(){
         fill("white");
         text("Tente novamente...",450,200);
     }
+    
+    if (mouseIsPressed && chances > 0 && estado === "no estilingue"){
+        Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+    }
 }
 function mousePressed(){
     if(estado === "lançado" && chances > 0) {
@@ -123,12 +127,6 @@ function mousePressed(){
         estado = "no estilingue";
         bird.trajetoria = []; 
     }
-}
-function mouseDragged(){
-    if (chances > 0 && estado === "no estilingue"){
-        Body.setPosition(bird.body, {x: mouseX , y: mouseY});
-    }
-    
 }
 
 function mouseReleased(){
