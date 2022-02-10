@@ -17,7 +17,7 @@ var reiniciar;
 
 function preload() {
     getBackgroundImg();
-    fundoImg = loadImage("sprites/base.png");
+    fundoImg = loadImage("sprites/bg.png");
 }
 
 function setup(){
